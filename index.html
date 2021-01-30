@@ -18,16 +18,16 @@
     <header class="container">
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a class="active" href="#">Sign Up</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="index.html">Contact</a></li>
+                <li><a class="active" href="index.html">Sign Up</a></li>
             </ul>
         </nav>
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="main" class="main-content container">
 
         <div class="booking-content">
             <h1>Cruise Queen</h1>
@@ -91,7 +91,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p id="subtotal">$500</p>
                     </div>
                 </div>
 
@@ -100,7 +100,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="vat">$50</p>
                     </div>
                 </div>
                 <hr>
@@ -109,15 +109,15 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="total">$550</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="bookNow" class="btn-style">Book Now</button>
         </div>
     </main>
     <div class="container">
-  <!-- Content here -->
+ <h1>Congratulation</h1>
 </div>
       <!-- Javascript -->
 <script>
@@ -132,26 +132,26 @@
            const caseCount = parseFloat(caseInput.value)
            const caseNewCount = caseCount + 1;
            caseInput.value=caseNewCount;
-        //    const caseTotal = caseNewCount * 59;
-        //    document.getElementById('firstClassInput').value = caseTotal;
+           const caseTotal = caseNewCount * 150;
+           document.getElementById('subtotal').innerText = caseTotal;
+           document.getElementById("vat").innerText = caseTotal * 0.05;
+           document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
+           document.getElementById("economyClassInput").style.display = " none";
+           document.getElementById("firstClassInput").style.display = "block";
          });
             // Second Plus Button//
             const firstMinusBtn = document.getElementById("firstMinusBtn");
     firstMinusBtn.addEventListener("click",function(){
-        
-            // const firstClassAmount =document.getElementById("firstClassInput").value;
-            // const depositNumber = parseFloat(firstClassAmount);
-
-         
-
-
-            // document.getElementById("case-increase").addEventListener("click",function(){
            const caseInput = document.getElementById("firstClassInput");
            const caseCount = parseFloat(caseInput.value)
            const caseNewCount = caseCount- 1;
            caseInput.value=caseNewCount;
-        //    const caseTotal = caseNewCount * 59;
-        //    document.getElementById('firstClassInput').value = caseTotal;
+           const caseTotal = caseNewCount * 150;
+           document.getElementById('subtotal').innerText = caseTotal; 
+           document.getElementById("vat").innerText = caseTotal * 0.05;
+           document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
+           document.getElementById("economyClassInput").style.display = " none";
+           document.getElementById("firstClassInput").style.display = "block";
          });
 
                  // Economy Plus Button
@@ -161,6 +161,12 @@
            const caseCount = parseFloat(caseInput.value)
            const caseNewCount = caseCount + 1;
            caseInput.value=caseNewCount;
+           const caseTotal = caseNewCount * 100;
+           document.getElementById('subtotal').innerText = caseTotal; 
+           document.getElementById("vat").innerText = caseTotal * 0.05;
+           document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
+           document.getElementById("firstClassInput").style.display = " none";
+           document.getElementById("economyClassInput").style.display = "block";
            });
             // Second Plus Button//
             const economyMinusBtn = document.getElementById("economyMinusBtn");
@@ -169,7 +175,17 @@
            const caseCount = parseFloat(caseInput.value)
            const caseNewCount = caseCount- 1;
            caseInput.value=caseNewCount;
+           const caseTotal = caseNewCount * 100;
+           document.getElementById('subtotal').innerText = caseTotal; 
+           document.getElementById("vat").innerText = caseTotal * 0.05;
+           document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
+           document.getElementById("firstClassInput").style.display = " none";
+           document.getElementById("economyClassInput").style.display = "block";
          });
-
+                //   Buy now eventhandler
+                document.getElementById("bookNow").addEventListener('click',function(){
+                    document.getElementById("main").style.display = "none";
+                    document.getElementById("economyClassInput").style.display = "block";
+                });
 </script>
 </html>
