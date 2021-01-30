@@ -39,7 +39,7 @@
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <input class="inp-style" type="text"  name="" placeholder="Dhake, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
@@ -125,10 +125,6 @@
             // First Plus Button
     const firstPlusBtn = document.getElementById("firstPlusBtn");
     firstPlusBtn.addEventListener("click",function(){
-        
-            // const firstClassAmount =document.getElementById("firstClassInput").value;
-            // const depositNumber = parseFloat(firstClassAmount);
-            // document.getElementById("case-increase").addEventListener("click",function(){
            const caseInput = document.getElementById("firstClassInput");
            const caseCount = parseFloat(caseInput.value)
            const caseNewCount = caseCount + 1;
@@ -140,7 +136,7 @@
            document.getElementById("economyClassInput").style.display = " none";
            document.getElementById("firstClassInput").style.display = "block";
          });
-            // Second Plus Button//
+            // Firs Minus Button//
             const firstMinusBtn = document.getElementById("firstMinusBtn");
     firstMinusBtn.addEventListener("click",function(){
            const caseInput = document.getElementById("firstClassInput");
@@ -169,12 +165,16 @@
            document.getElementById("firstClassInput").style.display = " none";
            document.getElementById("economyClassInput").style.display = "block";
            });
-            // Second Plus Button//
+                 // Economy Minus Button//
             const economyMinusBtn = document.getElementById("economyMinusBtn");
     economyMinusBtn.addEventListener("click",function(){
            const caseInput = document.getElementById("economyClassInput");
            const caseCount = parseFloat(caseInput.value)
            const caseNewCount = caseCount- 1;
+           if (caseNewCount <1) {
+               console.log("object");
+        //     document.getElementById("economyClassInput").style.display = " none"; 
+           }
            caseInput.value=caseNewCount;
            const caseTotal = caseNewCount * 100;
            document.getElementById('subtotal').innerText = caseTotal; 
@@ -182,8 +182,9 @@
            document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
            document.getElementById("firstClassInput").style.display = " none";
            document.getElementById("economyClassInput").style.display = "block";
+           
          });
-                //   Buy now eventhandler
+                  //   Buy now eventhandler
                 document.getElementById("bookNow").addEventListener('click',function(){
                     document.getElementById("main").style.display = "none";
                     document.getElementById("economyClassInput").style.display = "block";
