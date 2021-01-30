@@ -125,31 +125,31 @@
             // First Plus Button
     const firstPlusBtn = document.getElementById("firstPlusBtn");
     firstPlusBtn.addEventListener("click",function(){
-           const caseInput = document.getElementById("firstClassInput");
-           const caseCount = parseFloat(caseInput.value)
-           const caseNewCount = caseCount + 1;
-           caseInput.value=caseNewCount;
-           const caseTotal = caseNewCount * 150;
-           document.getElementById('subtotal').innerText = caseTotal;
-           document.getElementById("vat").innerText = caseTotal * 0.05;
-           document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
+           const ticketInput = document.getElementById("firstClassInput");
+           const ticketCount = parseFloat(ticketInput.value)
+           const ticketNewCount = ticketCount + 1;
+           ticketInput.value=ticketNewCount;
+           const ticketTotal = ticketNewCount * 150;
+           document.getElementById('subtotal').innerText = ticketTotal;
+           document.getElementById("vat").innerText = ticketTotal * 0.05;
+           document.getElementById("total").innerText = ticketTotal + ticketTotal * 0.05;
            document.getElementById("economyClassInput").style.display = " none";
            document.getElementById("firstClassInput").style.display = "block";
          });
             // Firs Minus Button//
             const firstMinusBtn = document.getElementById("firstMinusBtn");
     firstMinusBtn.addEventListener("click",function(){
-           const caseInput = document.getElementById("firstClassInput");
-           const caseCount = parseFloat(caseInput.value)
-           const caseNewCount = caseCount- 1;
-           caseInput.value=caseNewCount;
-           const caseTotal = caseNewCount * 150;
-           if (caseNewCount < 0) {
-             caseNewCount = 0
+           const ticketInput = document.getElementById("firstClassInput");
+           const ticketCount = parseFloat(ticketInput.value)
+           const ticketNewCount = ticketCount- 1;
+           ticketInput.value=ticketNewCount;
+           const ticketTotal = ticketNewCount * 150;
+           if (ticketNewCount < 0) {
+             ticketNewCount = 0
            };
-           document.getElementById('subtotal').innerText = caseTotal; 
-           document.getElementById("vat").innerText = caseTotal * 0.05;
-           document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
+           document.getElementById('subtotal').innerText = ticketTotal; 
+           document.getElementById("vat").innerText = ticketTotal * 0.05;
+           document.getElementById("total").innerText = ticketTotal + ticketTotal * 0.05;
            document.getElementById("economyClassInput").style.display = " none";
            document.getElementById("firstClassInput").style.display = "block";
          });
@@ -157,31 +157,31 @@
                  // Economy Plus Button
     const economyPlusBtn = document.getElementById("economyPlusBtn");
     economyPlusBtn.addEventListener("click",function(){
-           const caseInput = document.getElementById("economyClassInput");
-           const caseCount = parseFloat(caseInput.value)
-           const caseNewCount = caseCount + 1;
-           caseInput.value=caseNewCount;
-           const caseTotal = caseNewCount * 100;
-           document.getElementById('subtotal').innerText = caseTotal; 
-           document.getElementById("vat").innerText = caseTotal * 0.05;
-           document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
+           const ticketInput = document.getElementById("economyClassInput");
+           const ticketCount = parseFloat(ticketInput.value)
+           const ticketNewCount = ticketCount + 1;
+           ticketInput.value=ticketNewCount;
+           const ticketTotal = ticketNewCount * 100;
+           document.getElementById('subtotal').innerText = ticketTotal; 
+           document.getElementById("vat").innerText = ticketTotal * 0.05;
+           document.getElementById("total").innerText = ticketTotal + ticketTotal * 0.05;
            document.getElementById("firstClassInput").style.display = " none";
            document.getElementById("economyClassInput").style.display = "block";
            });
                  // Economy Minus Button//
             const economyMinusBtn = document.getElementById("economyMinusBtn");
     economyMinusBtn.addEventListener("click",function(){
-           const caseInput = document.getElementById("economyClassInput");
-           const caseCount = parseFloat(caseInput.value)
-           const caseNewCount = caseCount- 1;
-           if (caseNewCount <1) {
+           const ticketInput = document.getElementById("economyClassInput");
+           const ticketCount = parseFloat(ticketInput.value)
+           const ticketNewCount = ticketCount- 1;
+           if (ticketNewCount <1) {
                console.log("object"); 
            }
-           caseInput.value=caseNewCount;
-           const caseTotal = caseNewCount * 100;
-           document.getElementById('subtotal').innerText = caseTotal; 
-           document.getElementById("vat").innerText = caseTotal * 0.05;
-           document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
+           ticketInput.value=ticketNewCount;
+           const ticketTotal = ticketNewCount * 100;
+           document.getElementById('subtotal').innerText = ticketTotal; 
+           document.getElementById("vat").innerText = ticketTotal * 0.05;
+           document.getElementById("total").innerText = ticketTotal + ticketTotal * 0.05;
            document.getElementById("firstClassInput").style.display = " none";
            document.getElementById("economyClassInput").style.display = "block";
            
