@@ -126,4 +126,25 @@ button{
     background-color: green;
     padding: 9px;
     font-size: large;
+    border-radius: 5px;
+}
+#none{
+    padding-top: 50px;
+    color: rgb(183, 255, 233);
+  
+   display: none;
+}
+    
+    
+
+.congrat{
+   border: tomato 8px;
+   text-align: center;
+   font-size: 100px;
+   padding-top: 100px;
+}
+.afterCongrat{
+   
+    text-align: center;
+    font-size:70px;
 }
