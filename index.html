@@ -144,6 +144,9 @@
            const caseNewCount = caseCount- 1;
            caseInput.value=caseNewCount;
            const caseTotal = caseNewCount * 150;
+           if (caseNewCount < 0) {
+             caseNewCount = 0
+           };
            document.getElementById('subtotal').innerText = caseTotal; 
            document.getElementById("vat").innerText = caseTotal * 0.05;
            document.getElementById("total").innerText = caseTotal + caseTotal * 0.05;
@@ -172,8 +175,7 @@
            const caseCount = parseFloat(caseInput.value)
            const caseNewCount = caseCount- 1;
            if (caseNewCount <1) {
-               console.log("object");
-        //     document.getElementById("economyClassInput").style.display = " none"; 
+               console.log("object"); 
            }
            caseInput.value=caseNewCount;
            const caseTotal = caseNewCount * 100;
